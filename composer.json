@@ -1,0 +1,29 @@
+{
+    "name": "helionogueir\foldercreator",
+    "type": "tool",
+    "description": "FolderCreator - Library to create folders",
+    "homepage": "http://www.qalt-ed.com.br/",
+    "license": "MIT",
+    "keywords": [
+        "tool",
+        "PHP",
+        "Folder",
+        "Directory",
+        "Access",
+        "Permission"
+    ],
+    "require": {
+        "php": ">=5.4",
+        "helionogueir/typeboxing": ">=1.0.0"
+    },
+    "authors": [
+        {
+            "name": "Helio Nogueira",
+            "email": "helio.nogueir@gmail.com",
+            "role": "Arquitect, Tester, Analyst and Developer"
+        }
+    ],
+    "autoload": {
+        "files": ["core/autoload/register.inc"]
+    }
+}
