@@ -31,7 +31,7 @@ class Create {
         foreach ($folders as $folder) {
           if (!empty($folder)) {
             $fullpath .= DIRECTORY_SEPARATOR . $folder;
-            if (!self::createDirectory(new String($fullpath), $mode)) {
+            if (!$this->createDirectory(new String($fullpath), $mode)) {
               $auth = false;
             }
           }
