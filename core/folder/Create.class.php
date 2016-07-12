@@ -24,21 +24,21 @@ class Create {
    * @return helionogueir\typeBoxing\type\Boolean True directory create, and False not create
    */
   public final function make(String $directory, Integer $mode = null) {
-    $auth = true;
     if (!$directory->isEmpty()) {
       if ($folders = explode(DIRECTORY_SEPARATOR, Path::replaceOSSeparator($directory))) {
         $fullpath = null;
+        if (empty($mode)) {
+          $mode = new Integer(0777);
+        }
         foreach ($folders as $folder) {
           if (!empty($folder)) {
             $fullpath .= DIRECTORY_SEPARATOR . $folder;
-            if (!$this->createDirectory(new String($fullpath), $mode)) {
-              $auth = false;
-            }
+            $this->createDirectory(new String($fullpath), $mode);
           }
         }
       }
     }
-    return new Boolean($auth);
+    return new Boolean(file_exists($directory));
   }
 
   /**
@@ -53,10 +53,9 @@ class Create {
     if (is_dir($directory)) {
       $auth = true;
     } else {
-      @mkdir($directory, 0777, true);
+      @mkdir($directory, "{$mode}", true);
     }
-    $_mode = ($mode) ? $mode : 0777;
-    @chmod($directory, $_mode);
+    @chmod($directory, "{$mode}");
     return is_dir($directory);
   }
 
