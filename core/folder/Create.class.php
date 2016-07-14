@@ -9,7 +9,7 @@ use helionogueir\typeBoxing\type\Integer;
 
 /**
  * Create folder:
- * - Create folder and sub directory;
+ * - Create folder and sub directory
  *
  * @author Helio Nogueira <helio.nogueir@gmail.com>
  * @version v1.0.0
@@ -17,13 +17,14 @@ use helionogueir\typeBoxing\type\Integer;
 class Create {
 
   /**
-   * Create directory:
-   * - Create directory and sub directory;
+   * Make directory:
+   * - Make directory and sub directory
    * 
-   * @param helionogueir\typeBoxing\type\String $directory Directory name
-   * @return helionogueir\typeBoxing\type\Boolean True directory create, and False not create
+   * @param helionogueir\typeBoxing\type\String $directory Path of directory
+   * @param helionogueir\typeBoxing\type\Integer $mode Define chmod of path directory
+   * @return helionogueir\typeBoxing\type\Boolean Info if create the folder
    */
-  public final function make(String $directory, Integer $mode = null) {
+  public function make(String $directory, Integer $mode = null) {
     if (!$directory->isEmpty()) {
       if ($folders = explode(DIRECTORY_SEPARATOR, Path::replaceOSSeparator($directory))) {
         $fullpath = null;
@@ -42,13 +43,14 @@ class Create {
   }
 
   /**
-   * Create directory:
-   * - Create directory and sub directory;
+   * Make directory:
+   * - Make directory
    * 
-   * @param helionogueir\typeBoxing\type\String $directory Directory name
-   * @return bool True directory create, and False not create
+   * @param helionogueir\typeBoxing\type\String $directory Path of directory
+   * @param helionogueir\typeBoxing\type\Integer $mode Define chmod of path directory
+   * @return helionogueir\typeBoxing\type\Boolean Info if create the folder
    */
-  private final function createDirectory(String $directory, Integer $mode = null) {
+  private function createDirectory(String $directory, Integer $mode = null) {
     $auth = false;
     if (is_dir($directory)) {
       $auth = true;
@@ -56,7 +58,7 @@ class Create {
       @mkdir($directory, "{$mode}", true);
     }
     @chmod($directory, "{$mode}");
-    return is_dir($directory);
+    return new Boolean(is_dir($directory));
   }
 
 }

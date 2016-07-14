@@ -8,8 +8,8 @@ use helionogueir\typeBoxing\type\String;
 use helionogueir\typeBoxing\type\Boolean;
 
 /**
- * Create folder:
- * - Create folder and sub directory;
+ * Delete directory:
+ * - Delete directory and sub directory;
  *
  * @author Helio Nogueira <helio.nogueir@gmail.com>
  * @version v1.0.0
@@ -17,11 +17,11 @@ use helionogueir\typeBoxing\type\Boolean;
 class Delete {
 
   /**
-   * Create directory:
-   * - Create directory and sub directory;
+   * Delete directory:
+   * - Delete directory and sub directory
    * 
-   * @param helionogueir\typeBoxing\type\String $directory Directory name
-   * @return helionogueir\typeBoxing\type\Boolean True directory create, and False not create
+   * @param helionogueir\typeBoxing\type\String $directory Path of directory
+   * @return helionogueir\typeBoxing\type\Boolean Info if delete directory
    */
   public final function rm(String $directory) {
     if (is_dir($directory)) {
