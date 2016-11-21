@@ -1,12 +1,12 @@
 {
     "name": "helionogueir/foldercreator",
     "description": "FolderCreator - Library tools for folders",
-    "homepage": "http://www.qalt-ed.com.br/",
+    "homepage": "https://github.com/helionogueir",
     "license": "MIT",
     "keywords": ["library", "tool", "php", "folder", "directory", "pattern"],
     "require": {
         "php": ">=5.6",
-        "helionogueir/typeboxing": ">=1.0.0"
+        "helionogueir/typeboxing": "=1.0.0"
     },
     "autoload": {
         "files": ["core/autoload/register.inc"]
@@ -14,8 +14,7 @@
     "authors": [
         {
             "name": "Helio Nogueira",
-            "email": "helio.nogueir@gmail.com",
-            "role": "Arquitect, Tester, Analyst and Developer"
+            "email": "helio.nogueir@gmail.com"
         }
     ]
 }
