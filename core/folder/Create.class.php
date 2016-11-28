@@ -3,9 +3,6 @@
 namespace helionogueir\foldercreator\folder;
 
 use helionogueir\foldercreator\tool\Path;
-use helionogueir\typeBoxing\type\String;
-use helionogueir\typeBoxing\type\Boolean;
-use helionogueir\typeBoxing\type\Integer;
 
 /**
  * Create folder:
@@ -20,37 +17,37 @@ class Create {
    * Make directory:
    * - Make directory and sub directory
    * 
-   * @param helionogueir\typeBoxing\type\String $directory Path of directory
-   * @param helionogueir\typeBoxing\type\Integer $mode Define chmod of path directory
-   * @return helionogueir\typeBoxing\type\Boolean Info if create the folder
+   * @param string $directory Path of directory
+   * @param int $mode Define chmod of path directory
+   * @return bool Info if create the folder
    */
-  public function make(String $directory, Integer $mode = null) {
-    if (!$directory->isEmpty()) {
+  public function make(string $directory, int $mode = null) {
+    if (!empty($directory)) {
       if ($folders = explode(DIRECTORY_SEPARATOR, Path::replaceOSSeparator($directory))) {
         $fullpath = null;
         if (empty($mode)) {
-          $mode = new Integer(0777);
+          $mode = 0777;
         }
         foreach ($folders as $folder) {
           if (!empty($folder)) {
             $fullpath .= DIRECTORY_SEPARATOR . $folder;
-            $this->createDirectory(new String($fullpath), $mode);
+            $this->createDirectory($fullpath, $mode);
           }
         }
       }
     }
-    return new Boolean(file_exists($directory));
+    return file_exists($directory);
   }
 
   /**
    * Make directory:
    * - Make directory
    * 
-   * @param helionogueir\typeBoxing\type\String $directory Path of directory
-   * @param helionogueir\typeBoxing\type\Integer $mode Define chmod of path directory
-   * @return helionogueir\typeBoxing\type\Boolean Info if create the folder
+   * @param string $directory Path of directory
+   * @param int $mode Define chmod of path directory
+   * @return bool Info if create the folder
    */
-  private function createDirectory(String $directory, Integer $mode = null) {
+  private function createDirectory(string $directory, int $mode = null) {
     $auth = false;
     if (is_dir($directory)) {
       $auth = true;
@@ -58,7 +55,7 @@ class Create {
       @mkdir($directory, "{$mode}", true);
     }
     @chmod($directory, "{$mode}");
-    return new Boolean(is_dir($directory));
+    return is_dir($directory);
   }
 
 }

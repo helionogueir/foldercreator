@@ -2,8 +2,6 @@
 
 namespace helionogueir\foldercreator\tool;
 
-use helionogueir\typeBoxing\type\String;
-
 /**
  * Path behavior:
  * - Path behavior rules;
@@ -21,11 +19,11 @@ class Path {
    * Replace OS separator
    * - Change separetor to OS separator;
    * 
-   * @param helionogueir\typeBoxing\type\String $path Directory path
-   * @return helionogueir\typeBoxing\type\String Path replace system pattern
+   * @param string $path Directory path
+   * @return string Path replace system pattern
    */
-  public static function replaceOSSeparator(String $path) {
-    return new String(preg_replace("/(\/|\\\\)/", DIRECTORY_SEPARATOR, $path));
+  public static function replaceOSSeparator(string $path) {
+    return preg_replace("/(\/|\\\\)/", DIRECTORY_SEPARATOR, $path);
   }
 
 }

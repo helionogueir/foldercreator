@@ -5,8 +5,7 @@
     "license": "MIT",
     "keywords": ["library", "tool", "php", "folder", "directory", "pattern"],
     "require": {
-        "php": ">=7.1",
-        "helionogueir/typeboxing": "=1.1.0"
+        "php": ">=7.1"
     },
     "autoload": {
         "files": ["core/autoload/register.inc"]
