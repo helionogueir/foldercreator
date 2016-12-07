@@ -25,7 +25,7 @@ $pathname = sys_get_temp_dir() . DIRECTORY_SEPARATOR . "helionogueir_foldercreat
 Tool for create directory
 ```php
 use helionogueir\foldercreator\folder\Delete;
-$pathname = sys_get_temp_dir() . DIRECTORY_SEPARATOR . "helionogueir_foldercreator_folder_create;";
+$pathname = sys_get_temp_dir() . DIRECTORY_SEPARATOR . "helionogueir_foldercreator_folder_create";
 (new Delete())->rm($pathname);
 ```
 ------
