@@ -16,7 +16,7 @@ composer require helionogueir/foldercreator
 Tool for create directory
 ```php
 use helionogueir\foldercreator\folder\Create;
-pathname = sys_get_temp_dir() . DIRECTORY_SEPARATOR . "helionogueir_foldercreator_folder_create;";
+$pathname = sys_get_temp_dir() . DIRECTORY_SEPARATOR . "helionogueir_foldercreator_folder_create;";
 (new Create())->mkdir($pathname);
 ```
 ------
@@ -25,7 +25,7 @@ pathname = sys_get_temp_dir() . DIRECTORY_SEPARATOR . "helionogueir_foldercreato
 Tool for create directory
 ```php
 use helionogueir\foldercreator\folder\Delete;
-pathname = sys_get_temp_dir() . DIRECTORY_SEPARATOR . "helionogueir_foldercreator_folder_create;";
+$pathname = sys_get_temp_dir() . DIRECTORY_SEPARATOR . "helionogueir_foldercreator_folder_create;";
 (new Delete())->rm($pathname);
 ```
 ------
@@ -33,17 +33,17 @@ pathname = sys_get_temp_dir() . DIRECTORY_SEPARATOR . "helionogueir_foldercreato
 
 Tool for create directory
 ```php
-use helionogueir\foldercreator\tool\AccessMode
+use helionogueir\foldercreator\tool\AccessMode;
 use helionogueir\foldercreator\folder\Create;
-pathname = sys_get_temp_dir() . DIRECTORY_SEPARATOR . "helionogueir_foldercreator_folder_create;";
-(new Create())->mkdir($pathname, AccessMode::MOD_0777f);
+$pathname = sys_get_temp_dir() . DIRECTORY_SEPARATOR . "helionogueir_foldercreator_folder_create;";
+(new Create())->mkdir($pathname, AccessMode::MOD_0777);
 ```
 ------
 ### helionogueir\foldercreator\tool\Path
 
 Tool for create directory
 ```php
-use helionogueir\foldercreator\tool\Path
+use helionogueir\foldercreator\tool\Path;
 $pathname = "pathnam/to\\file/or\\directory";
 echo Path::replaceOSSeparator($pathname);
 ```
