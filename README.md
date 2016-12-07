@@ -16,7 +16,7 @@ composer require helionogueir/foldercreator
 Tool for create directory
 ```php
 use helionogueir\foldercreator\folder\Create;
-$pathname = sys_get_temp_dir() . DIRECTORY_SEPARATOR . "helionogueir_foldercreator_folder_create;";
+$pathname = sys_get_temp_dir() . DIRECTORY_SEPARATOR . "helionogueir_foldercreator_folder_create";
 (new Create())->mkdir($pathname);
 ```
 ------
@@ -35,7 +35,7 @@ Tool for create directory
 ```php
 use helionogueir\foldercreator\tool\AccessMode;
 use helionogueir\foldercreator\folder\Create;
-$pathname = sys_get_temp_dir() . DIRECTORY_SEPARATOR . "helionogueir_foldercreator_folder_create;";
+$pathname = sys_get_temp_dir() . DIRECTORY_SEPARATOR . "helionogueir_foldercreator_folder_create";
 (new Create())->mkdir($pathname, AccessMode::MOD_0777);
 ```
 ------
