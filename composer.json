@@ -1,11 +1,11 @@
 {
     "name": "helionogueir/foldercreator",
-    "description": "FolderCreator - Library tools for folders",
+    "description": "A simple library for read, create, manipulate folders / directories",
     "homepage": "https://github.com/helionogueir",
     "license": "MIT",
-    "keywords": ["library", "tool", "php", "folder", "directory", "pattern"],
+    "keywords": ["library", "tool", "folder", "directory", "pattern", "visibility"],
     "require": {
-        "php": ">=7.1"
+        "php": ">=7.0"
     },
     "autoload": {
         "files": ["core/autoload/register.inc"]

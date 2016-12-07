@@ -3,26 +3,18 @@
 namespace helionogueir\foldercreator\tool;
 
 /**
- * Path behavior:
- * - Path behavior rules;
- *
+ * - Delete directories and dependencies
  * @author Helio Nogueira <helio.nogueir@gmail.com>
- * @version v1.0.0
+ * @version v1.1.0
  */
-class Path {
-
-  public function __construct() {
-    return false;
-  }
+abstract class Path {
 
   /**
-   * Replace OS separator
-   * - Change separetor to OS separator;
-   * 
+   * - Change separetor to OS separator
    * @param string $path Directory path
    * @return string Path replace system pattern
    */
-  public static function replaceOSSeparator(string $path) {
+  public static function replaceOSSeparator(string $path): string {
     return preg_replace("/(\/|\\\\)/", DIRECTORY_SEPARATOR, $path);
   }
 

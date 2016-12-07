@@ -6,22 +6,18 @@ use DirectoryIterator;
 use helionogueir\foldercreator\tool\Path;
 
 /**
- * Delete directory:
- * - Delete directory and sub directory;
- *
+ * - Delete directories and dependencies
  * @author Helio Nogueira <helio.nogueir@gmail.com>
- * @version v1.0.0
+ * @version v1.1.0
  */
 class Delete {
 
   /**
-   * Delete directory:
-   * - Delete directory and sub directory
-   * 
+   * - Delete directory and sub directory recursive
    * @param string $directory Path of directory
-   * @return bool Info if delete directory
+   * @return bool Return if directory to be remove
    */
-  public final function rm(string $directory) {
+  public function rm(string $directory): bool {
     if (is_dir($directory)) {
       foreach (new DirectoryIterator(Path::replaceOSSeparator($directory)) as $fileInfo) {
         if (!$fileInfo->isDot()) {
@@ -35,7 +31,7 @@ class Delete {
       }
       @rmdir($directory);
     }
-    return file_exists($directory);
+    return !file_exists($directory);
   }
 
 }
